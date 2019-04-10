@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "Tittle": "Aliens",
+        "Director":"Directorxd",
+        "Actors": [
+            {
+                "id": 1,
+                "name": "James Cameron"
+            },
+            {
+                "id": 2,
+                "name": "Jhons Cameron"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "Tittle": "Aliens 2",
+        "Director":"Directorxd",
+        "Actors": [
+            {
+                "id": 1,
+                "name": "James Cameron"
+            },
+            {
+                "id": 2,
+                "name": "Jhons Cameron"
+            }
+        ]
+    }
+]
