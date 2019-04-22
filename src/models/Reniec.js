@@ -10,7 +10,9 @@ const EstadoCivilSchema = new Schema({
     LugarNacimiento: { type: String, required: true },
     Domicilio: { type: String, required: true },
     Profesion: { type: String, required: true }
-});
+},
+    {versionKey:false}
+);
 
 
 module.exports = model('EstadoCivil', EstadoCivilSchema);

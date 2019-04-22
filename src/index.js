@@ -18,9 +18,10 @@ app.use(express.json());
 
 //rutas
 app.use(require('./routes/index'))
-app.use('/api/movies',require('./routes/movies'))
+//app.use('/api/movies',require('./routes/movies'))
 app.use('/api/reniec',require('./routes/reniec'))
-
+app.use('/api/indecopi',require('./routes/indecopi'))
+app.use('/api/inpe',require('./routes/inpe'))
 //
 app.listen(3000, ()=>{
     console.log(`Server on port ${app.get('port')}`);

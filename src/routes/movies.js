@@ -3,7 +3,7 @@ const router = Router();
 
 const _ = require('underscore')
 
-const movies = require('../ejemplo.json');
+//const movies = require('../ejemplo.json');
 
 router.get('/', (req, res) => {
 
