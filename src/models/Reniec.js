@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const { Schema, model } = require('mongoose');
-const router = Router();
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema; 
+
 
 const EstadoCivilSchema = new Schema({
     Nombres: { type: String, required: true },
@@ -11,9 +11,10 @@ const EstadoCivilSchema = new Schema({
     Domicilio: { type: String, required: true },
     Profesion: { type: String, required: true }
 },
-    {versionKey:false}
+    { versionKey: false }
 );
 
+const reniecdb = mongoose.connection.useDb('reniec5');
 
-module.exports = model('EstadoCivil', EstadoCivilSchema);
+module.exports = reniecdb.model('EstadoCivil', EstadoCivilSchema, 'EstadoCivil');
 

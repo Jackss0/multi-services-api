@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -18,38 +18,30 @@ import Button from "../../components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "../../../../assets/jss/material-kit-react/components/headerLinksStyle.jsx";
 
+import Reniec from "../../../views/Entidades/Reniec.jsx";
+
+
 function HeaderLinks({ ...props }) {
   const { classes } = props;
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <CustomDropdown
+          hoverColor="info"
           noLiPadding
-          buttonText="Components"
+          buttonText="Entidades"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/api/inpe" className={classes.dropdownLink}>
-              TestDropdown1
+            <Link to="/Reniec" className={classes.dropdownLink}>
+              Reniec
             </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              TestDropdown2
-            </a>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              TestDropdown3
-          </a>
-
+            <Link to="/Inpe" className={classes.dropdownLink}>
+              Inpe
+            </Link>
           ]}
         />
       </ListItem>
@@ -60,7 +52,7 @@ function HeaderLinks({ ...props }) {
           onClick={e => e.preventDefault()}
           color="transparent"
         >
-          Discover
+          Sobre nosotros
                     </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -70,7 +62,7 @@ function HeaderLinks({ ...props }) {
           onClick={e => e.preventDefault()}
           color="transparent"
         >
-          Wishlist
+          Contactenos
                     </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -81,9 +73,11 @@ function HeaderLinks({ ...props }) {
           color="info"
           default
         >
-          Register
+          Registrese
                     </Button>
       </ListItem>
+
+
     </List>
   );
 }
