@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
     else {
         res.status(500).json({ error: "Ah ocurrido un error" });
     }
-    
 });
 
 module.exports = router;
