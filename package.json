@@ -6,13 +6,14 @@
   "scripts": {
     "pre-dev": "npm i mongoose multer dotenv cross-env cors underscore express morgan fs-extra nodemon -D",
     "dev": "webpack-dev-server -d --open",
-    "api": "nodemon src/index.js",
+    "api": "nodemon backend/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
@@ -27,14 +28,11 @@
     "fs-extra": "^7.0.1",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.6.0",
-    "jquery": "^3.4.0",
     "magnific-popup": "^1.1.0",
     "material-kit": "^2.0.4",
     "material-ui-icons": "^1.0.0-beta.36",
     "mongoose": "^5.5.5",
-    "morgan": "^1.9.1",
     "multer": "^1.4.1",
-    "popper.js": "^1.15.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.8",
@@ -46,7 +44,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.0.0",
+    "morgan": "^1.9.1",
     "file-loader": "^3.0.1",
     "img-loader": "^3.0.1",
     "node-sass": "^4.11.0",

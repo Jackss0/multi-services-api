@@ -1,0 +1,21 @@
+[
+    {
+        "Nombres": "Josue Avelino",
+        "Apellidos": "Tueros Cueva",
+        "FechaNacimiento": "07/04/2019",
+        "DNI": "71279117",
+        "LugarNacimiento": "Lima",
+        "Domicilio": "Villa Maria del Triunfo",
+        "Profesion": "QA tester"
+    },
+    {
+        "Nombres": "Josue Avelino",
+        "Apellidos": "Test apellido",
+        "Dni": "984984999",
+        "Antecedentes": "No tiene antecedentes",
+        "Razon": "Trabajo",
+        "Fecha": "04/04/2019"
+    
+    }
+]
+
