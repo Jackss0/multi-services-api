@@ -5,7 +5,14 @@ const _ = require('underscore');
 
 const Inpe = require('../models/Inpe');
 
-//const EstadoCivil = require('../reniec.json');
+
+router.get('/:dni', async (req, res) => {
+    const { dni } = req.params;
+    const result = await Inpe.findOne({"Dni":dni})
+    console.log(result);
+    res.json(result);
+});
+
 
 router.get('/', async (req, res) => {
     const inpe = await Inpe.find();
@@ -15,9 +22,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { Nombres, Apellidos, Antecedentes, Razon, Fecha } = req.body;
     if (Nombres && Apellidos && Antecedentes && Razon && Fecha ) {
-        //const id = movies.length + 1;
         const newInpe = new Inpe({ ...req.body });
-        //EstadoCivil.push(newEstadoCivil);
         await newInpe.save();
         res.json({message: "Registro agregado"});
     }

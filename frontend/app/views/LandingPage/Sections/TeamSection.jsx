@@ -16,9 +16,7 @@ import CardFooter from "../../components/Card/CardFooter.jsx";
 
 import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle.jsx";
 
-import team1 from "../../../assets/img/faces/avatar.jpg";
-import team2 from "../../../assets/img/faces/christian.jpg";
-import team3 from "../../../assets/img/faces/kendall.jpg";
+
 import inpe from "../../../assets/img/faces/inpe.jpg";
 import reniec from "../../../assets/img/faces/reniec.png";
 
