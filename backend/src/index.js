@@ -18,7 +18,6 @@ app.use(express.json())
 app.use('/api/reniec',require('./routes/reniec'))
 app.use('/api/indecopi',require('./routes/indecopi'))
 app.use('/api/inpe/antecedentes',require('./routes/inpe'))
-app.use('/api/inpe/test',require('./routes/inpe'))
 
 //server up
 app.listen(app.get('port'), ()=>{
