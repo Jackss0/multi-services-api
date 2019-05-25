@@ -3,7 +3,7 @@ const router = Router();
 
 const _ = require('underscore');
 
-const Inpe = require('../models/Inpe');
+const Inpe = require('../models/Inpe/AntecedentesPenales');
 
 
 router.get('/:dni', async (req, res) => {

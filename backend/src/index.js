@@ -16,7 +16,6 @@ app.use(express.json())
 
 //routes
 app.use('/api/reniec',require('./routes/reniec'))
-app.use('/api/indecopi',require('./routes/indecopi'))
 app.use('/api/inpe/antecedentes',require('./routes/inpe'))
 
 //server up
