@@ -18,8 +18,6 @@ import Button from "../../components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "../../../assets/jss/material-kit-react/components/headerLinksStyle.jsx";
 
-import Reniec from "../../../views/Entities/Reniec.jsx";
-
 
 function HeaderLinks({ ...props }) {
   const { classes } = props;
@@ -66,15 +64,9 @@ function HeaderLinks({ ...props }) {
                     </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.navLink}
-          onClick={e => e.preventDefault()}
-          color="info"
-          default
-        >
-          Registrese
-                    </Button>
+        <Link to="/LoginPage" className={classes.navLink} color="info">
+           Login/Registro
+        </Link>
       </ListItem>
 
 

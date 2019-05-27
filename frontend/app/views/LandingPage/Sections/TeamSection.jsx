@@ -25,12 +25,12 @@ class TeamSection extends React.Component {
     const { classes } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
-      classes.imgRoundedCircle,
+      classes.imgRoundedRaised,
       classes.imgFluid
     );
     return (
       <div className={classes.section}>
-        <h2 className={classes.title}>Here is our team</h2>
+        <h2 className={classes.title}>Entidades Socias</h2>
         <div>
           <GridContainer>
             <GridItem xs={12} sm={12} md={4}>
