@@ -80,8 +80,8 @@ class Reniec extends Component {
         <br></br>
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <center>
-        <PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
-          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+        <PDFDownloadLink document={<MyDocument />} fileName="Certificado_Antecedentes_Penales.pdf">
+          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Certificado Antecedentes Penales')}
         </PDFDownloadLink>
         </center>
       </div>

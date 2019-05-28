@@ -12,6 +12,7 @@ import LandingPage from "./views/LandingPage/LandingPage.jsx";
 import Header from "./views/components/Header/Header.jsx";
 import HeaderLinks from "./views/components/Header/HeaderLinks.jsx";
 import LoginPage from "./views/LoginPage/LoginPage.jsx";
+import RegisterPage from "./views/LoginPage/RegisterPage.jsx";
 
 
 import Reniec from "../app/views/Entities/Reniec.jsx";
@@ -36,6 +37,7 @@ render(
       <Route path="/Reniec" component={Reniec} />
       <Route path="/Inpe" component={Inpe} />
       <Route path="/LoginPage" component={LoginPage} />
+      <Route path="/RegisterPage" component={RegisterPage} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>

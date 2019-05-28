@@ -34,7 +34,7 @@ class RegisterPage extends React.Component {
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     setTimeout(
-      function() {
+      function () {
         this.setState({ cardAnimaton: "" });
       }.bind(this),
       700
@@ -57,42 +57,12 @@ class RegisterPage extends React.Component {
               <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[this.state.cardAnimaton]}>
                   <form className={classes.form}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
-                      <h4>Login</h4>
-                      <div className={classes.socialLine}>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-twitter"} />
-                        </Button>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-facebook"} />
-                        </Button>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-google-plus-g"} />
-                        </Button>
-                      </div>
+                    <CardHeader color="success" className={classes.cardHeader}>
+                      <h2>Registro</h2>
                     </CardHeader>
-                    <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
                       <CustomInput
-                        labelText="First Name..."
+                        labelText="Primer Nombre"
                         id="first"
                         formControlProps={{
                           fullWidth: true
@@ -107,7 +77,24 @@ class RegisterPage extends React.Component {
                         }}
                       />
                       <CustomInput
-                        labelText="Email..."
+                        labelText="DNI"
+                        id="dni"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          type: "folder",
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <Icon className={classes.inputIconsColor}>
+                                fingerprint
+                              </Icon>
+                            </InputAdornment>
+                          )
+                        }}
+                      />
+                      <CustomInput
+                        labelText="Email"
                         id="email"
                         formControlProps={{
                           fullWidth: true
@@ -122,7 +109,7 @@ class RegisterPage extends React.Component {
                         }}
                       />
                       <CustomInput
-                        labelText="Password"
+                        labelText="Contraseña"
                         id="pass"
                         formControlProps={{
                           fullWidth: true
@@ -138,9 +125,27 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
+                      <CustomInput
+                        labelText="Repetir contraseña"
+                        id="pass2"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          type: "password",
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <Icon className={classes.inputIconsColor}>
+                                https
+                              </Icon>
+                            </InputAdornment>
+                          )
+                        }}
+                      />
+
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                      <Button simple color="primary" size="lg">
+                      <Button  color="success" size="lg">
                         Get started
                       </Button>
                     </CardFooter>

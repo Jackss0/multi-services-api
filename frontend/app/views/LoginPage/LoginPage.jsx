@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -20,6 +21,8 @@ import CardFooter from "../components/Card/CardFooter.jsx";
 import CustomInput from "../components/CustomInput/CustomInput.jsx";
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage.jsx";
+
+import RegisterPage from "../../views/LoginPage/RegisterPage.jsx";
 
 import image from "../../assets/img/bg7.jpg";
 
@@ -57,7 +60,7 @@ class LoginPage extends React.Component {
               <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[this.state.cardAnimaton]}>
                   <form className={classes.form}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
+                    <CardHeader color="info" className={classes.cardHeader}>
                       <h4>Login</h4>
                       <div className={classes.socialLine}>
                         <Button
@@ -89,9 +92,12 @@ class LoginPage extends React.Component {
                         </Button>
                       </div>
                     </CardHeader>
-                    <center><Button to="" className={classes.navLink} color="info">
-                      Registrese
-                    </Button></center>
+                    <center>
+                      <Button component={Link} to="/RegisterPage" color="info" size="lg">
+                        Registrarse
+                      </Button>
+                    </center>
+
                     <p className={classes.divider}>O lo clasico</p>
                     <CardBody>
                       <CustomInput
@@ -143,7 +149,7 @@ class LoginPage extends React.Component {
                       />
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                      <Button simple color="primary" size="lg">
+                      <Button component={Link} to="#" color="info" size="lg">
                         Login
                       </Button>
                     </CardFooter>
@@ -153,6 +159,11 @@ class LoginPage extends React.Component {
             </GridContainer>
           </div>
           <Footer whiteFont />
+          <BrowserRouter>
+            <Switch>
+              <Route path="/RegisterPage" component={RegisterPage} />
+            </Switch>
+          </BrowserRouter>
         </div>
       </div>
     );
