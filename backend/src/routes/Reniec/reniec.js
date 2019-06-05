@@ -3,7 +3,7 @@ const router = Router();
 
 const _ = require('underscore');
 
-const EstadoCivil = require('../models/Reniec/EstadoCivil');
+const EstadoCivil = require('../../models/Reniec/EstadoCivil');
 
 router.get('/dni:', async (req, res) => {
     const { dni } = req.params;
