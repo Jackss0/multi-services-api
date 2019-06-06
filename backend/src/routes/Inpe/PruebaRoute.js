@@ -5,7 +5,6 @@ const _ = require('underscore');
 
 const Inpe = require('../../models/Inpe/Prueba');
 
-
 router.get('/:dni', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");//necesario para poder hacer la llamada al endpoint desde la UI
     const { dni } = req.params;
@@ -25,7 +24,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     const { Nombres, Apellidos } = req.body;
-    if (Nombres && Apellidos) {
+    if (Nombres && Apellidos ) {
         const newInpe = new Inpe({ ...req.body });
         await newInpe.save();
         res.json({ message: "Registro agregado" });

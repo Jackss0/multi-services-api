@@ -3,9 +3,8 @@ const router = Router();
 
 const _ = require('underscore');
 
-const Inpe = require('../../models/Inpe/AntecedentesPenales');
+const Inpe = require('../../models/Reniec/PruebaR');
 
-//BUSQUEDA POR DNI
 router.get('/:dni', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");//necesario para poder hacer la llamada al endpoint desde la UI
     const { dni } = req.params;
@@ -22,11 +21,10 @@ router.get('/', async (req, res) => {
     res.json(inpe);
 });
 
-//INGRESAR REGISTRAR
 router.post('/', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    const { Nombres, Apellidos, Antecedentes, Razon, Fecha } = req.body;
-    if (Nombres && Apellidos && Antecedentes && Razon && Fecha) {
+    const { Nombres, Apellidos } = req.body;
+    if (Nombres && Apellidos  ) {
         const newInpe = new Inpe({ ...req.body });
         await newInpe.save();
         res.json({ message: "Registro agregado" });

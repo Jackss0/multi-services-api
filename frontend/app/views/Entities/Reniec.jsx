@@ -43,8 +43,8 @@ class Reniec extends Component {
 
 
   componentWillMount() {
-    const dni = '159753123';
-    fetch('http://localhost:3000/api/inpe/antecedentes/' + dni)
+    const dni = '71279117';
+    fetch('http://localhost:3000/api/inpe/Antecedentes/' + dni)
       .then((response) => {
         console.log(response)
         return response.json();
