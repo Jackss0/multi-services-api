@@ -56,14 +56,14 @@ class RegisterPage extends React.Component {
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[this.state.cardAnimaton]}>
-                  <form className={classes.form}>
+                  <form action="http://localhost:3000/api/users/signup" method="POST" className={classes.form}>
                     <CardHeader color="success" className={classes.cardHeader}>
                       <h2>Registro</h2>
                     </CardHeader>
                     <CardBody>
-                      <CustomInput
-                        labelText="Primer Nombre"
-                        id="first"
+                      <CustomInput name="Nombres"
+                        labelText="Nombres"
+                        id="Nombres"
                         formControlProps={{
                           fullWidth: true
                         }}
@@ -76,7 +76,22 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput
+                      <CustomInput name="Apellidos"
+                        labelText="Apellidos"
+                        id="Apellidos"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          type: "text",
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <People className={classes.inputIconsColor} />
+                            </InputAdornment>
+                          )
+                        }}
+                      />
+                      <CustomInput name="Dni"
                         labelText="DNI"
                         id="dni"
                         formControlProps={{
@@ -93,24 +108,26 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput
-                        labelText="Email"
-                        id="email"
+                      <CustomInput name="Cui"
+                        labelText="Cui"
+                        id="Cui"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "email",
+                          type: "folder",
                           endAdornment: (
                             <InputAdornment position="end">
-                              <Email className={classes.inputIconsColor} />
+                              <Icon className={classes.inputIconsColor}>
+                                fingerprint
+                              </Icon>
                             </InputAdornment>
                           )
                         }}
                       />
-                      <CustomInput
+                      <CustomInput name="Password"
                         labelText="Contraseña"
-                        id="pass"
+                        id="Password"
                         formControlProps={{
                           fullWidth: true
                         }}
@@ -145,8 +162,8 @@ class RegisterPage extends React.Component {
 
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                      <Button  color="success" size="lg">
-                        Get started
+                      <Button type="submit"  color="success" size="lg">
+                        Registrarse
                       </Button>
                     </CardFooter>
                   </form>

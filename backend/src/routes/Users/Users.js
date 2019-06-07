@@ -1,5 +1,6 @@
-const { Router } = require('express')
+const { Router } = require('express');
 const router = Router();
+const passport = require('passport');
 
 const _ = require('underscore');
 
@@ -22,20 +23,13 @@ router.get('/', async (req, res) => {
     res.json(inpe);
 });
 
-// REGISTRAR
-router.post('/', async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    const { Nombres, Apellidos, Dni, Cui, Contraseña } = req.body;
-    if (Nombres && Apellidos && Dni && Cui && Contraseña) {
-        const newInpe = new Users({ ...req.body });
-        await newInpe.save();
-        res.json({ message: "Registro agregado" });
-    }
-    else {
-        res.status(500).json({ error: "Un error ah ocurrido" });
-    }
 
-});
+
+// REGISTRAR
+router.post('/signup', passport.authenticate( 'local-signup', {
+    successRedirect: 'http://localhost:4000/',
+    failureRedirect: 'http://localhost:4000/RegisterPage'
+}));
 
 
 

@@ -1,29 +1,29 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy;
-const user = require('../models/Users/Users')
+const User = require('../models/Users/Users')
 
 passport.serializeUser((user, done) => {  
-    done(null, user.dni);
+    done(null, user.Dni);
 });
 
-passport.deserializeUser(async (dni, done) => {  
-    const user = await User.FindById(dni);
+passport.deserializeUser(async (Dni, done) => {  
+    const user = await User.findById(Dni);
     done(null,user)
 });
 
 
 //Registrar
 passport.use('local-signup', new LocalStrategy({
-    usernameField: 'dni',
-    passwordField: 'password',
+    usernameField: 'Dni',
+    passwordField: 'Password',
     passReqToCallback: true
-},async (req, dni, password, cui, done)=>{
-    const user = new user();
-    user.dni=dni;
-    user.password=password;
-    user.cui=cui;
+},async (req, Dni, Password, done)=>{
+    const newUser = new user();
+    user.Dni=Dni;
+    user.Password=Password;
+    console.log(newUser)
     await newUser.save();
-    done(null,newUser);
+    done(null, newUser);
 }
 ));
 
