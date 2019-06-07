@@ -26,7 +26,14 @@ import RegisterPage from "../../views/LoginPage/RegisterPage.jsx";
 
 import image from "../../assets/img/bg7.jpg";
 
+
+
+
+
 class LoginPage extends React.Component {
+  
+  
+  
   constructor(props) {
     super(props);
     // we use this to make the card to appear after the page has been rendered

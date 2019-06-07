@@ -49,17 +49,7 @@ class LandingPage extends React.Component {
                   the information that can make you or your product create the
                   first impression.
                 </h4>
-                <br /><center>
-                  <Button
-                    color="success"
-                    size="lg"
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fas fa-play" />
-                    Watch video
-                </Button></center>
+                <br />
               </GridItem>
             </GridContainer>
           </div>

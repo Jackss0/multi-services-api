@@ -24,3 +24,10 @@ mongoose.createConnection('mongodb://localhost/poder_judicial', {
 })
     .then(db => console.log('poder_judicial DB is connected'))
     .catch(err => console.error(err));
+
+
+mongoose.createConnection('mongodb://localhost/users', {
+        useNewUrlParser: true
+})
+    .then(db => console.log('users DB is connected'))
+    .catch(err => console.error(err));
