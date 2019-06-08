@@ -31,6 +31,12 @@ router.post('/signup', passport.authenticate( 'local-signup', {
     failureRedirect: 'http://localhost:4000/RegisterPage'
 }));
 
+//Login
+router.post('/signin', passport.authenticate( 'local-signin', {
+    successRedirect: 'http://localhost:4000/',
+    failureRedirect: 'http://localhost:4000/RegisterPage'
+}));
+
 
 
 

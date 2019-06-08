@@ -18,14 +18,33 @@ passport.use('local-signup', new LocalStrategy({
     passwordField: 'Password',
     passReqToCallback: true
 },async (req, Dni, Password, done)=>{
-    const newUser = new user();
-    user.Dni=Dni;
-    user.Password=Password;
+    const newUser = new User();
+    newUser.Nombres=req.body.Nombres;
+    newUser.Apellidos=req.body.Apellidos;
+    newUser.Dni=Dni;
+    newUser.Cui=req.body.Cui;
+    newUser.Password=Password;
     console.log(newUser)
     await newUser.save();
     done(null, newUser);
 }
 ));
+
+
+passport.use('local-signin', new LocalStrategy({
+    usernameField: 'Dni',
+    passwordField: 'Password',
+    passReqToCallback: true
+  }, async (req, Dni, Password, done) => {
+    const user = await User.findOne({email: email});
+    if(!user) {
+      return done(null, false, req.flash('signinMessage', 'No Existe Usuario con eses Dni'));
+    }
+    if(!user.comparePassword(password)) {
+      return done(null, false, req.flash('signinMessage', 'Contraseña Incorrecta'));
+    }
+    return done(null, user);
+  }));
 
 
 

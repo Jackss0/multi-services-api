@@ -61,13 +61,14 @@ class RegisterPage extends React.Component {
                       <h2>Registro</h2>
                     </CardHeader>
                     <CardBody>
-                      <CustomInput name="Nombres"
+                      <CustomInput 
                         labelText="Nombres"
                         id="Nombres"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
+                          name: "Nombres",
                           type: "text",
                           endAdornment: (
                             <InputAdornment position="end">
@@ -76,13 +77,14 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput name="Apellidos"
+                      <CustomInput 
                         labelText="Apellidos"
                         id="Apellidos"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
+                          name: "Apellidos",
                           type: "text",
                           endAdornment: (
                             <InputAdornment position="end">
@@ -91,13 +93,14 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput name="Dni"
-                        labelText="DNI"
-                        id="dni"
+                      <CustomInput 
+                        labelText="Dni"
+                        id="Dni"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
+                          name: "Dni",
                           type: "folder",
                           endAdornment: (
                             <InputAdornment position="end">
@@ -108,13 +111,14 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput name="Cui"
+                      <CustomInput 
                         labelText="Cui"
                         id="Cui"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
+                          name: "Cui",
                           type: "folder",
                           endAdornment: (
                             <InputAdornment position="end">
@@ -131,7 +135,8 @@ class RegisterPage extends React.Component {
                         formControlProps={{
                           fullWidth: true
                         }}
-                        inputProps={{
+                        inputProps={{ 
+                          name: "Password",
                           type: "password",
                           endAdornment: (
                             <InputAdornment position="end">
