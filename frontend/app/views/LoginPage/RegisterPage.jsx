@@ -4,11 +4,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
-import Header from "../components/Header/Header.jsx";
-import HeaderLinks from "../components/Header/HeaderLinks.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 import GridContainer from "../components/Grid/GridContainer.jsx";
 import GridItem from "../components/Grid/GridItem.jsx";
@@ -129,7 +126,7 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput name="Password"
+                      <CustomInput 
                         labelText="Contraseña"
                         id="Password"
                         formControlProps={{
@@ -167,7 +164,7 @@ class RegisterPage extends React.Component {
 
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                      <Button type="submit"  color="success" size="lg">
+                      <Button type="submit" color="success" size="lg">
                         Registrarse
                       </Button>
                     </CardFooter>

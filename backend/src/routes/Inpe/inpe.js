@@ -8,6 +8,7 @@ const Inpe = require('../../models/Inpe/AntecedentesPenales');
 //BUSQUEDA POR DNI
 router.get('/:dni', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");//necesario para poder hacer la llamada al endpoint desde la UI
+    console.log(localStorage.getItem('myDni'));
     const { dni } = req.params;
     const result = await Inpe.findOne({ "Dni": dni })
     console.log(result);

@@ -14,12 +14,11 @@ import GridItem from "../components/Grid/GridItem.jsx";
 import Button from "../components/CustomButtons/Button.jsx";
 import Parallax from "../components/Parallax/Parallax.jsx";
 
+import HeaderLinksUser from '../../views/components/Header/HeaderLinksUser.jsx';
+import Header from "../../views/components/Header/Header.jsx";
+
 import LoginPage from "../../views/LoginPage/LoginPage.jsx";
 import RegisterPage from "../../views/LoginPage/RegisterPage.jsx";
-
-
-import Header from "../../views/components/Header/Header.jsx";
-import HeaderLinks from "../../views/components/Header/HeaderLinks.jsx";
 
 import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage.jsx";
 
@@ -28,25 +27,25 @@ import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
 
-
-
 const dashboardRoutes = [];
 
-class LandingPage extends React.Component {
+class LandingPageUser extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
       <div>
-        <Header
-          color="transparent"
-          brand="MultiServices APIs"
-          fixed
-          rightLinks={<HeaderLinks />}
-          changeColorOnScroll={{
-            height: 400,
-            color: "white"
-          }}
-        />
+        <div>
+          <Header
+            color="transparent"
+            brand="MultiServices APIs"
+            fixed
+            rightLinks={<HeaderLinksUser />}
+            changeColorOnScroll={{
+              height: 400,
+              color: "white"
+            }}
+          />
+        </div>
         <Parallax filter image={require("../../assets/img/documents-bg2.jpg")}>
           <div className={classes.container}>
             <GridContainer>
@@ -82,11 +81,11 @@ class LandingPage extends React.Component {
             <WorkSection />
           </div>
         </div>
-
         <Footer />
+
       </div>
     );
   }
 }
 
-export default withStyles(landingPageStyle)(LandingPage);
+export default withStyles(landingPageStyle)(LandingPageUser);

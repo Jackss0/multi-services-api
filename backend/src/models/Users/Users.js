@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
 
 const UsersSchema = new Schema({
+    _id: { type: Object, required: false },
     Nombres: { type: String, required: false },
     Apellidos: { type: String, required: false },
     Dni: { type: String, required: true },
@@ -15,13 +16,14 @@ const UsersSchema = new Schema({
 //variable con la se que conecta a la bd
 const inpedb = mongoose.connection.useDb('users');
 
+/*
 UsersSchema.methods.encryptPassword = (Password) =>{
     return bcrypt.hashSync(Password, bcrypt.genSaltSync(10))
 };
 
 UsersSchema.methods.comparePassword = function (Password){
-    return bcrypt.compareSync(Password, this.Contraseña)
-};
+    return bcrypt.compareSync(Password, this.Password)
+};*/
 
 //exportando el modelo para que sea usado
 module.exports = inpedb.model('users', UsersSchema); //('Nombre de la tabla con la que se guardara en la bd','Schema o Modelo')

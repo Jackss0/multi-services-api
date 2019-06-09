@@ -10,65 +10,29 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { AssignmentInd  ,Apps, CloudDownload } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
 
+import {Menubar} from 'primereact/menubar';
+
 import headerLinksStyle from "../../../assets/jss/material-kit-react/components/headerLinksStyle.jsx";
+
 
 
 function HeaderLinks({ ...props }) {
   const { classes } = props;
+  
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          hoverColor="info"
-          noLiPadding
-          buttonText="Entidades"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/Reniec" className={classes.dropdownLink}>
-              Reniec
-            </Link>,
-            <Link to="/Inpe" className={classes.dropdownLink}>
-              Inpe
-            </Link>
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.navLink}
-          onClick={e => e.preventDefault()}
-          color="transparent"
-        >
-          Sobre nosotros
-                    </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="#pablo"
-          className={classes.navLink}
-          onClick={e => e.preventDefault()}
-          color="transparent"
-        >
-          Contactenos
-                    </Button>
-      </ListItem>
       <ListItem className={classes.listItem}>
         <Link to="/LoginPage" className={classes.navLink} color="info">
            Login/Registro
         </Link>
       </ListItem>
-
+      
 
     </List>
   );
