@@ -8,7 +8,7 @@ const Inpe = require('../../models/Reniec/ActaNacimiento.js');
 router.get('/:dni', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");//necesario para poder hacer la llamada al endpoint desde la UI
     const { dni } = req.params;
-    const result = await Inpe.findOne({ "Dni": dni })
+    const result = await Inpe.findOne({ "Cui": dni })
     console.log(result);
     res.json(result);
 });

@@ -35,10 +35,10 @@ function HeaderLinksUser({ ...props }) {
           buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
-              Reniec
+              Acta de Nacimiento
             </Link>,
             <Link to="/Inpe" className={classes.dropdownLink}>
-              Inpe
+              Otros
             </Link>
           ]}
         />
@@ -54,11 +54,11 @@ function HeaderLinksUser({ ...props }) {
           }}
           buttonIcon={AssignmentInd}
           dropdownList={[
-            <Link to="/Reniec" className={classes.dropdownLink}>
-              Reniec
+            <Link to="/Inpe" className={classes.dropdownLink}>
+              Antecedentes Penales
             </Link>,
             <Link to="/Inpe" className={classes.dropdownLink}>
-              Inpe
+              Otros
             </Link>
           ]}
         />
@@ -75,10 +75,10 @@ function HeaderLinksUser({ ...props }) {
           buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
-              Reniec
+              Prueba
             </Link>,
             <Link to="/Inpe" className={classes.dropdownLink}>
-              Inpe
+              Otros
             </Link>
           ]}
         />
@@ -95,10 +95,10 @@ function HeaderLinksUser({ ...props }) {
           buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
-              Reniec
+              Prueba
             </Link>,
             <Link to="/Inpe" className={classes.dropdownLink}>
-              Inpe
+              Otros
             </Link>
           ]}
         />

@@ -44,7 +44,7 @@ class Reniec extends Component {
 
   componentWillMount() {
     const dni = localStorage.getItem('myDni');
-    fetch('http://localhost:3000/api/inpe/antecedentes/' + dni,
+    fetch('http://localhost:3000/api/reniec/actanacimiento/' + dni,
       {
         method: "GET"
       })
