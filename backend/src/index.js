@@ -37,6 +37,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use('/api/reniec', require('./routes/Reniec/reniec'));
+app.use('/api/reniec/actanacimiento', require('./routes/Reniec/ActaNacimientoRoute'));
 app.use('/api/users', require('./routes/Users/Users'));
 app.use('/api/inpe/antecedentes', require('./routes/Inpe/inpe'));
 app.use('/api/inpe/prueba1', require('./routes/Inpe/PruebaRoute'));

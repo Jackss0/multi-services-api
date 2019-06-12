@@ -52,7 +52,7 @@ function HeaderLinksUser({ ...props }) {
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
               Reniec
@@ -72,7 +72,7 @@ function HeaderLinksUser({ ...props }) {
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
               Reniec
@@ -92,7 +92,7 @@ function HeaderLinksUser({ ...props }) {
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={AssignmentInd}
           dropdownList={[
             <Link to="/Reniec" className={classes.dropdownLink}>
               Reniec
@@ -106,21 +106,20 @@ function HeaderLinksUser({ ...props }) {
       <ListItem className={classes.listItem}>
 
         <CustomDropdown
-          left
-          caret={false}
-          hoverColor="transparent"
+          hoverColor="info"
+          noLiPadding
           buttonText="Cuenta"
           buttonProps={{
             className:
               classes.navLink ,
-            color: "transparent"
+              color: "transparent"
           }}
           buttonIcon={Apps}
           dropdownList={[
             <form action="http://localhost:3000/api/users/logout" method="POST" className={classes.form}>
               <center>
-              <Button type="submit" className={classes.dropdownLink} color="info" size="lg">
-                logout
+              <Button type="submit" className={classes.dropdownLink} color="transparent">
+              logout
               </Button></center>
             </form>
           ]}

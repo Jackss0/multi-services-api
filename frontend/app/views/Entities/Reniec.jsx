@@ -43,20 +43,23 @@ class Reniec extends Component {
 
 
   componentWillMount() {
-    const dni = '71279117';
-    fetch('http://localhost:3000/api/inpe/Antecedentes/' + dni)
+    const dni = localStorage.getItem('myDni');
+    fetch('http://localhost:3000/api/inpe/antecedentes/' + dni,
+      {
+        method: "GET"
+      })
       .then((response) => {
         console.log(response)
         return response.json();
       })
       .then((antecedentes) => {
-        const formatData = this.formatData(antecedentes);
+        //const formatData = this.formatData(antecedentes);
         console.log(antecedentes)
-        console.log(formatData)
+        //console.log(formatData)
 
 
 
-        this.setState({ antecedentes: formatData, descripcion: antecedentes });
+        this.setState({ descripcion: antecedentes });
       });
   }
 
@@ -70,7 +73,7 @@ class Reniec extends Component {
   }
 
   render() {
-    
+
     return (
       //Button para descargar el pdf
       <div>
@@ -80,9 +83,9 @@ class Reniec extends Component {
         <br></br>
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <center>
-        <PDFDownloadLink document={<MyDocument />} fileName="Certificado_Antecedentes_Penales.pdf">
-          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Certificado Antecedentes Penales')}
-        </PDFDownloadLink>
+          <PDFDownloadLink document={<MyDocument />} fileName="Certificado_Antecedentes_Penales.pdf">
+            {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Certificado Antecedentes Penales')}
+          </PDFDownloadLink>
         </center>
       </div>
     )

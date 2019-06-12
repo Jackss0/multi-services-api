@@ -14,7 +14,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 //BUSQUEDA POR DNI
 router.get('/:dni', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");//necesario para poder hacer la llamada al endpoint desde la UI
-
+    res.header('Access-Control-Allow-Headers', "*");
     const { dni } = req.params;
     const result = await Users.findOne({ "Dni": dni })
     console.log(result);
@@ -39,15 +39,19 @@ router.post('/signup', passport.authenticate('local-signup', {
 }));
 
 //Login
-router.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: 'http://localhost:4000/LandingPageUser',
-    failureRedirect: 'http://localhost:4000/LoginPage',
-    failureFlash: true
-}));
+router.post('/signin', (req, res, next) => {
+    req.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*");
+    },
+        passport.authenticate('local-signin', {
+            successRedirect: 'http://localhost:4000/LandingPageUser',
+            failureRedirect: 'http://localhost:4000/LoginPage',
+            failureFlash: true
+        }));
 
-router.post('http://localhost:4000/LandingPageUser',isAuthenticated, (req, res, next) => {
+router.post('http://localhost:4000/LandingPageUser', isAuthenticated, (req, res, next) => {
     res.render('profile');
-  });
+});
 
 router.post('/logout', (req, res, next) => {
     req.logout();
@@ -55,11 +59,11 @@ router.post('/logout', (req, res, next) => {
 });
 
 function isAuthenticated(req, res, next) {
-    if(req.isAuthenticated()) {
-      return next();
+    if (req.isAuthenticated()) {
+        return next();
     }
     res.redirect('http://localhost:4000/LoginPage')
-  }
+}
 
 
 module.exports = router;
