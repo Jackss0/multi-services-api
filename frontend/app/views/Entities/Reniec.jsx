@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
 
-
 // Creando Stilos
 const styles = StyleSheet.create({
   page: {
@@ -21,7 +20,7 @@ const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text>Section #1</Text>
+        <Text>xd</Text>
       </View>
       <View style={styles.section}>
         <Text>Section #2</Text>
@@ -29,6 +28,7 @@ const MyDocument = () => (
     </Page>
   </Document>
 );
+
 
 class Reniec extends Component {
 
@@ -62,6 +62,8 @@ class Reniec extends Component {
         this.setState({ descripcion: antecedentes });
       });
   }
+
+  
 
   formatData(data) {
     return data.Antecedentes.map((data, i) => {
