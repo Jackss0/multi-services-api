@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const ActaDeNacimientoSchema = new Schema({
-
+    _id: { type: String, required: false, default:null },
     Cui: { type: String, required: false },
     NroActa: { type: String, required: false },
     FechaNacimiento: { type: String, required: false },

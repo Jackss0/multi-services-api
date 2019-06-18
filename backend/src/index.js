@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 app.use('/api/reniec', require('./routes/Reniec/reniec'));
 app.use('/api/reniec/actanacimiento', require('./routes/Reniec/ActaNacimientoRoute'));
 app.use('/api/users', require('./routes/Users/Users'));
-app.use('/api/inpe/antecedentes', require('./routes/Inpe/inpe'));
+app.use('/api/inpe/antecedentespenales', require('./routes/Inpe/AntecedentesPenalesRoute'));
 app.use('/api/inpe/prueba1', require('./routes/Inpe/PruebaRoute'));
 app.use('/api/reniec/prueba2', require('./routes/Reniec/PruebaRoute.js'));
 

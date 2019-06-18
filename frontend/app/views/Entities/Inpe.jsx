@@ -14,39 +14,33 @@ class Inpe extends Component {
     this.submit = this.submit.bind(this);
   }
 
-  /*
     componentWillMount() {
-      const dni = localStorage.getItem('myDni');
-      fetch('http://localhost:3000/api/inpe/antecedentes/' + dni,
-        {
-          method: "GET"
-        })
-        .then((response) => {
-          console.log(response)
-          return response.json();
-        })
-        .then((antecedentes) => {
-          //const formatData = this.formatData(antecedentes);
-          console.log(antecedentes)
-          //console.log(formatData)
-          this.setState({ descripcion: antecedentes });
-          localStorage.setItem('Antecedentes_Nombres', antecedentes.Nombres)
-          localStorage.setItem('Antecedentes_Apellidos', antecedentes.Apellidos)
-          var atc = localStorage.getItem('Antecedentes_Nombres')
-  
-          console.log('in fetch', atc)
+        setImmediate(() => {
+            var dni = localStorage.getItem('myDni');
+            fetch('http://localhost:3000/api/inpe/antecedentespenales/' + dni,
+                {
+                    method: "GET"
+                })
+                .then((response) => {
+                    //console.log(response)
+                    return response.json();
+                })
+                .then((antecedentes) => {
+                    //const formatData = this.formatData(antecedentes);
+                    console.log(antecedentes)
+                    //console.log(formatData)
+                    this.setState({ antecedentes: antecedentes });
+                    localStorage.setItem('Antecedentes_id', antecedentes._id)
+                    localStorage.setItem('Antecedentes_Nombres', antecedentes.Nombres)
+                    localStorage.setItem('Antecedentes_Apellidos', antecedentes.Apellidos)
+                    localStorage.setItem('Antecedentes_Dni', antecedentes.Dni)
+                    localStorage.setItem('Antecedentes_DescripcionDelito', antecedentes.Antecedentes[0].Descripcion)
+                    localStorage.setItem('Antecedentes_FechaDelito', antecedentes.Antecedentes[0].Fecha)
+                    localStorage.setItem('Antecedentes_Razon', antecedentes.Razon)
+                    localStorage.setItem('Antecedentes_Fecha', antecedentes.Fecha)
+                });
         });
     }
-  
-    formatData(data) {
-      return data.Antecedentes.map((data, i) => {
-        return {
-          "Apellidos": data.Apellidos,
-          "Fecha": data.Fecha
-        }
-      });
-    }
-  */
 
   async submit(ev) {
     console.log('compra completada');

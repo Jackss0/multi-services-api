@@ -56,9 +56,6 @@ class Reniec extends Component {
         //const formatData = this.formatData(antecedentes);
         console.log(antecedentes)
         //console.log(formatData)
-
-
-
         this.setState({ descripcion: antecedentes });
       });
   }

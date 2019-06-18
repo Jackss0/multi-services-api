@@ -54,6 +54,7 @@ router.post('http://localhost:4000/LandingPageUser', isAuthenticated, (req, res,
 });
 
 router.post('/logout', (req, res, next) => {
+    localStorage.clear();
     req.logout();
     res.redirect('http://localhost:4000/');
 });

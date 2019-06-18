@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EstadoCivilSchema = new Schema({
+    _id: { type: String, required: false, default:null },
     Nombres: { type: String, required: true },
     Apellidos: { type: String, required: true },
     FechaNacimiento: { type: Date, required: true },
