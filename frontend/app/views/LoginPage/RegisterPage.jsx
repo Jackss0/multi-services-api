@@ -144,23 +144,6 @@ class RegisterPage extends React.Component {
                           )
                         }}
                       />
-                      <CustomInput
-                        labelText="Repetir contraseña"
-                        id="pass2"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          type: "password",
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <Icon className={classes.inputIconsColor}>
-                                https
-                              </Icon>
-                            </InputAdornment>
-                          )
-                        }}
-                      />
 
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>

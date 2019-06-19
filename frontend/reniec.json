@@ -16,6 +16,56 @@
         "Razon": "Trabajo",
         "Fecha": "04/04/2019"
     
+    },
+
+    {
+        "_id": "5cfb28b5c08743086cc0f06b",
+        "Nombres": "Josue",
+        "Apellidos": "Tueros",
+        "Dni": "71279117",
+        "Cui": "123456789",
+        "Password": "1234"
+    },
+    {
+        "_id": "",
+        "Nombres": "Test2",
+        "Apellidos": "Test2",
+        "Dni": "15975312",
+        "Cui": "12132321",
+        "Password": "1212"
+    },
+    {
+        "_id": "5d058df2b1d53d33380e9400",
+        "Nombres": "Pepega",
+        "Apellidos": "Pepega",
+        "Dni": "95175312",
+        "Cui": "12132321",
+        "Password": "1313"
+    },
+    {
+        "_id": "5d058e15b1d53d33380e9401",
+        "Nombres": "Pepega2",
+        "Apellidos": "Pepega2",
+        "Dni": "75395112",
+        "Cui": "75395112",
+        "Password": "1515"
+    },
+    {
+        "_id": "5d0871c428107f1364541021",
+        "Nombres": "Test1",
+        "Apellidos": "Test1",
+        "Dni": "14796312",
+        "Cui": "12345678",
+        "Password": "1616"
+    },
+    {
+        "_id": "5d098c99a1daa209d4f2023e",
+        "Nombres": "TestPepege",
+        "Apellidos": "TestPepege",
+        "Dni": "98765432",
+        "Cui": "12351151",
+        "Password": "1717"
     }
 ]
 
+   

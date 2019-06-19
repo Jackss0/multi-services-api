@@ -69,10 +69,10 @@ class Inpe extends Component {
         <div>
           <center>
             <StripeCheckout
-              label="Pagar Documento"
-              description="Awesome Product"
+              label="Pagar Certificado: s/.30.00"
+              description="Inpe:Antecedentes Penales"
               locale="auto"
-              name="YourDomain.tld"
+              name="DocuFast"
               stripeKey="pk_test_FCPeBUUz3HatoOcISYwticUI009Lat98Hl"
               token={this.submit}
             />
