@@ -25,35 +25,6 @@ class ReniecPDF extends Component {
             descripcion: []
         }
     }
-/*
-    componentWillMount() {
-        setImmediate(() => {
-            var dni = localStorage.getItem('myDni');
-            fetch('http://localhost:3000/api/inpe/antecedentespenales/' + dni,
-                {
-                    method: "GET"
-                })
-                .then((response) => {
-                    //console.log(response)
-                    return response.json();
-                })
-                .then((antecedentes) => {
-                    //const formatData = this.formatData(antecedentes);
-                    console.log(antecedentes)
-                    //console.log(formatData)
-                    this.setState({ antecedentes: antecedentes });
-                    localStorage.setItem('Antecedentes_id', antecedentes._id)
-                    localStorage.setItem('Antecedentes_Nombres', antecedentes.Nombres)
-                    localStorage.setItem('Antecedentes_Apellidos', antecedentes.Apellidos)
-                    localStorage.setItem('Antecedentes_Dni', antecedentes.Dni)
-                    localStorage.setItem('Antecedentes_DescripcionDelito', antecedentes.Antecedentes[0].Descripcion)
-                    localStorage.setItem('Antecedentes_FechaDelito', antecedentes.Antecedentes[0].Fecha)
-                    localStorage.setItem('Antecedentes_Razon', antecedentes.Razon)
-                    localStorage.setItem('Antecedentes_Fecha', antecedentes.Fecha)
-                });
-        });
-    }*/
-
 
     render() {
         return (

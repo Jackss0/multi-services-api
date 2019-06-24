@@ -10,8 +10,8 @@ import LandingPage from "./views/LandingPage/LandingPage.jsx";
 import LoginPage from "./views/LoginPage/LoginPage.jsx";
 import RegisterPage from "./views/LoginPage/RegisterPage.jsx";
 import LandingPageUser from "./views/LandingPage/LandingPageUser.jsx";
-import Reniec from "../app/views/Entities/Reniec.jsx";
-import Inpe from "../app/views/Entities/Inpe.jsx";
+import Reniec from "./views/Entities/Reniec/ActadeNacimiento.jsx";
+import Inpe from "./views/Entities/Inpe/AntecedentesPenales.jsx";
 
 
 
