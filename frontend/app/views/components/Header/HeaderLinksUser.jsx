@@ -77,8 +77,8 @@ function HeaderLinksUser({ ...props }) {
           }}
           buttonIcon={AssignmentInd}
           dropdownList={[
-            <Link to="/Reniec" className={classes.dropdownLink}>
-              Prueba
+            <Link to="/AntecedentesPoliciales" className={classes.dropdownLink}>
+              Antecedentes Policiales
             </Link>,
             <Link to="/Inpe" className={classes.dropdownLink}>
               Otros

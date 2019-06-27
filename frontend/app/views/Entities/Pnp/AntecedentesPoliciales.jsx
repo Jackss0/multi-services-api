@@ -6,7 +6,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-import image from "../../../assets/img/bg3.jpg"; 
+import image from "../../../assets/img/bg3.jpg";
 
 import Grid from "@material-ui/core/Grid";
 import GridContainer from "../../components/Grid/GridContainer.jsx";
@@ -15,7 +15,7 @@ import Card from "../../components/Card/Card.jsx";
 
 import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
-import ReniecPDF from '../../Documents/Reniec/ActaDeNacimientoDoc'
+import AntecedentesPolicialesPDF from '../../Documents/Pnp/AntecedentesPoliciales'
 import Button from "../../components/CustomButtons/Button.jsx";
 import StripeCheckout from 'react-stripe-checkout';
 
@@ -36,7 +36,7 @@ class AntecedentesPolicialesView extends Component {
 
   componentWillMount() {
     const dni = localStorage.getItem('myDni');
-    fetch('http://localhost:3000/api/reniec/antecedentespoliciales/' + dni,
+    fetch('http://localhost:3000/api/pnp/antecedentespoliciales/' + dni,
       {
         method: "GET"
       })
@@ -49,6 +49,14 @@ class AntecedentesPolicialesView extends Component {
         console.log(antecedentes)
         //console.log(formatData)
         this.setState({ descripcion: antecedentes });
+        localStorage.setItem('AntecedentesP_id', antecedentes._id)
+        localStorage.setItem('AntecedentesP_CodAnPol', antecedentes.CodAnPol)
+        localStorage.setItem('AntecedentesP_Dni', antecedentes.Dni)
+        localStorage.setItem('AntecedentesP_fecharegistro', antecedentes.fecharegistro)
+        localStorage.setItem('AntecedentesP_TipoAnPoL', antecedentes.TipoAnPoL)
+        localStorage.setItem('AntecedentesP_Estado', antecedentes.Estado)
+        localStorage.setItem('AntecedentesP_DescripcionAntPol', antecedentes.DescripcionAntPol)
+
       });
   }
 
@@ -75,11 +83,11 @@ class AntecedentesPolicialesView extends Component {
     if (this.state.complete) {
       return (
         <div style={{
-            width:"auto",
-            height:"960px",
-            backgroundImage: "url(" + image + ")",
-            backgroundSize: "cover"
-          }}>
+          width: "auto",
+          height: "960px",
+          backgroundImage: "url(" + image + ")",
+          backgroundSize: "cover"
+        }}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <Card>
@@ -92,8 +100,8 @@ class AntecedentesPolicialesView extends Component {
                     <br />
                     <br />
                     <Button type="submit" color="info" size="lg">
-                      <PDFDownloadLink document={<ReniecPDF />} fileName="Certificado_Antecedentes_Penales.pdf">
-                        <label >Acta de Nacimiento</label>
+                      <PDFDownloadLink document={<AntecedentesPolicialesPDF />} fileName="Certificado_Antecedentes_Penales.pdf">
+                        <label >Descargar Certificado</label>
                       </PDFDownloadLink>
                     </Button>
                   </center>
@@ -106,11 +114,11 @@ class AntecedentesPolicialesView extends Component {
     } else {
       return (
         <div style={{
-            width:"auto",
-            height:"960px",
-            backgroundImage: "url(" + image + ")",
-            backgroundSize: "cover"
-          }}>
+          width: "auto",
+          height: "960px",
+          backgroundImage: "url(" + image + ")",
+          backgroundSize: "cover"
+        }}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <Card>
@@ -124,9 +132,9 @@ class AntecedentesPolicialesView extends Component {
                     <br />
                     <StripeCheckout
                       label="Pagar Certificado: s/.15.00"
-                      description="Reniec: Acta de Nacimiento"
+                      description="Pnp: Antecedentes Policiales"
                       locale="auto"
-                      name="DocuFast"
+                      name=""
                       stripeKey="pk_test_FCPeBUUz3HatoOcISYwticUI009Lat98Hl"
                       token={this.submit}
                     />

@@ -12,7 +12,7 @@ import RegisterPage from "./views/LoginPage/RegisterPage.jsx";
 import LandingPageUser from "./views/LandingPage/LandingPageUser.jsx";
 import Reniec from "./views/Entities/Reniec/ActadeNacimiento.jsx";
 import Inpe from "./views/Entities/Inpe/AntecedentesPenales.jsx";
-
+import AntecedentesPoliciales from "./views/Entities/Pnp/AntecedentesPoliciales.jsx";
 
 
 render(
@@ -22,6 +22,7 @@ render(
       <Route path="/LandingPageUser" component={LandingPageUser} />
       <Route path="/Reniec" component={Reniec} />
       <Route path="/Inpe" component={Inpe} />
+      <Route path="/AntecedentesPoliciales" component={AntecedentesPoliciales} />
       <Route path="/LoginPage" component={LoginPage} />
       <Route path="/RegisterPage" component={RegisterPage} />
     </Switch>
