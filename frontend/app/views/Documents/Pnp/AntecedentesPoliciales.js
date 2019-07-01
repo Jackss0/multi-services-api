@@ -1,19 +1,58 @@
 import React, { Component } from 'react';
-import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-import ReactPDF from '@react-pdf/renderer';
-import { isNullOrUndefined } from 'util';
+import ReactPDF, {
+    Text,
+    Document,
+    Font,
+    Page,
+    StyleSheet,
+    Image,
+    View,
+} from '@react-pdf/renderer';
+import Header from './Header';
+import Education from './Education';
+import Experience from './Experience';
+import Skills from './Skills';
 
 // Creando Stilos
 const styles = StyleSheet.create({
     page: {
-        flexDirection: 'row',
-        backgroundColor: '#E4E4E4'
+        padding: 30,
     },
-    section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
-    }
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        '@media max-width: 400': {
+            flexDirection: 'column',
+        },
+    },
+    image: {
+        marginBottom: 10,
+    },
+    leftColumn: {
+        flexDirection: 'column',
+        width: 170,
+        paddingTop: 30,
+        paddingRight: 15,
+        '@media max-width: 400': {
+            width: '100%',
+            paddingRight: 0,
+        },
+        '@media orientation: landscape': {
+            width: 200,
+        },
+    },
+    footer: {
+        fontSize: 12,
+        textAlign: 'center',
+        marginTop: 25,
+        paddingTop: 10,
+        borderWidth: 3,
+        borderColor: 'gray',
+        borderStyle: 'dashed',
+        '@media orientation: landscape': {
+            marginTop: 10,
+        },
+    },
 });
 
 class AntecedentesPolicialesPDF extends Component {
@@ -32,28 +71,13 @@ class AntecedentesPolicialesPDF extends Component {
             // Creando el Component Document
             <Document>
                 <Page size="A4" style={styles.page}>
-                    <View style={styles.section}>
-                        <Text>
-                            Codigo: {localStorage.getItem('AntecedentesP_CodAnPol')}
-                        </Text>
-                        <Text>
-                            Dni: {localStorage.getItem('AntecedentesP_Dni')}
-                        </Text>
-                        <Text>
-                            Fecha de Registro: {localStorage.getItem('AntecedentesP_fecharegistro')}
-                        </Text>
-                        <Text>
-                            Tipo de Antecedente: {localStorage.getItem('AntecedentesP_TipoAnPoL')}
-                        </Text>
-                        <Text>
-                            Razon: {localStorage.getItem('AntecedentesP_Estado')}
-                        </Text>
-                        <Text>
-                            Descripcion de Antecedente: {localStorage.getItem('AntecedentesP_DescripcionAntPol')}
-                        </Text>
-                    </View>
-                    <View style={styles.section}>
-                        <Text>{localStorage.getItem('AntecedentesP_id')}</Text>
+                    <Header />
+                    <View style={styles.container}>
+                        <View style={styles.leftColumn}>
+                            <Education />
+                            <Skills />
+                        </View>
+                        <Experience />
                     </View>
                 </Page>
             </Document>
