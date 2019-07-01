@@ -135,7 +135,7 @@ class Inpe extends React.Component {
                       label="Pagar Certificado: s/.30.00"
                       description="Inpe:Antecedentes Penales"
                       locale="auto"
-                      name="DocuFast"
+                      name="Inpe"
                       stripeKey="pk_test_FCPeBUUz3HatoOcISYwticUI009Lat98Hl"
                       token={this.submit}
                     />

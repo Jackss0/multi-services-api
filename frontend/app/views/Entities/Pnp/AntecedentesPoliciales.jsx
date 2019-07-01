@@ -134,7 +134,7 @@ class AntecedentesPolicialesView extends Component {
                       label="Pagar Certificado: s/.15.00"
                       description="Pnp: Antecedentes Policiales"
                       locale="auto"
-                      name=""
+                      name="Policia N. del Peru"
                       stripeKey="pk_test_FCPeBUUz3HatoOcISYwticUI009Lat98Hl"
                       token={this.submit}
                     />

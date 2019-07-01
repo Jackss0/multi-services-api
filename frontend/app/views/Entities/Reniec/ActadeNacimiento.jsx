@@ -180,7 +180,7 @@ class Reniec extends Component {
                       label="Pagar Certificado: s/.15.00"
                       description="Reniec: Acta de Nacimiento"
                       locale="auto"
-                      name="DocuFast"
+                      name="Reniec"
                       stripeKey="pk_test_FCPeBUUz3HatoOcISYwticUI009Lat98Hl"
                       token={this.submit}
                     />
